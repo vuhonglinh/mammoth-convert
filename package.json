@@ -1,26 +1,30 @@
 {
-  "name": "mammoth",
-  "version": "1.11.0",
-  "author": "Michael Williamson <mike@zwobble.org>",
-  "description": "Convert Word documents from docx to simple HTML and Markdown",
+  "name": "mammoth-convert",
+  "version": "0.0.1",
+  "author": "David Vu",
+  "description": "Patched Mammoth: enhanced DOCX → HTML with improved math/image handling",
   "keywords": [
     "docx",
     "html",
     "office",
     "word",
     "markdown",
-    "md"
+    "md",
+    "convert",
+    "mammoth"
   ],
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mwilliamson/mammoth.js.git"
+    "url": "https://github.com/davidvu/mammoth-convert.git"
   },
   "dependencies": {
     "@xmldom/xmldom": "^0.8.6",
+    "adm-zip": "^0.5.16",
     "argparse": "~1.0.3",
     "base64-js": "^1.5.1",
     "bluebird": "~3.4.0",
+    "cheerio": "^1.1.2",
     "dingbat-to-unicode": "^1.0.1",
     "jszip": "^3.7.1",
     "lop": "^0.4.2",
@@ -45,20 +49,15 @@
     "./lib/docx/files.js": "./browser/docx/files.js"
   },
   "bin": {
-    "mammoth": "bin/mammoth"
+    "mammoth-convert": "bin/mammoth"
   },
   "scripts": {
     "pretest": "eslint lib test",
     "test": "mocha 'test/**/*.tests.js'",
-    "check-typescript": "tsc --noEmit lib/index.d.ts",
-    "prepare": "make mammoth.browser.min.js"
+    "prepare": ""
   },
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "engines": {
     "node": ">=12.0.0"
-  },
-  "volta": {
-    "node": "16.18.1",
-    "npm": "8.19.2"
   }
 }
