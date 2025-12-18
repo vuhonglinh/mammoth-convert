@@ -17,7 +17,17 @@ async function run() {
         zip.updateFile("word/document.xml", Buffer.from(xml, "utf8"));
         const patchedBuffer = zip.toBuffer();
 
-        const result = await mammoth.convertToHtml({ buffer: patchedBuffer });
+        const sharedContext = {
+            mathIndex: 0,
+            mathMap: {}
+        };
+
+        const result = await mammoth.convertToHtml({
+            buffer: patchedBuffer,
+            sharedContext
+        });
+
+        console.log(sharedContext.mathMap);
         const html = result.value;
 
         fs.writeFileSync("result.html", html, "utf8");
