@@ -30,7 +30,8 @@
     "lop": "^0.4.2",
     "path-is-absolute": "^1.0.0",
     "underscore": "^1.13.1",
-    "xmlbuilder": "^10.0.0"
+    "xmlbuilder": "^10.0.0",
+    "xslt-processor": "^3.4.0"
   },
   "devDependencies": {
     "@types/node": "^20.2.5",
