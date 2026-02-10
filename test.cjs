@@ -148,7 +148,7 @@ async function run() {
   let tmpDir = null;
 
   try {
-    const inputPath = "./Đề 7_Thi chính thức tháng 11 năm 2025_phanloigiai.docx";
+    const inputPath = "./omml.docx";
 
     const originalBuffer = fs.readFileSync(inputPath);
     const zip = new AdmZip(originalBuffer);
@@ -167,7 +167,6 @@ async function run() {
       { buffer: patchedBuffer },
       {
         convertMath: async (math) => {
-          console.log(math)
           if (math.kind === "mathtype") {
             const raw = await math.read();
             const binBuffer = ensureBuffer(raw);
@@ -196,7 +195,7 @@ async function run() {
           return [Html.text(math.altText || "[math]")];
         },
       }
-    ); 
+    );
     // ✅ MathType batch convert (Ruby file)
     const mapPathToMathml = mtAllBinFiles.length
       ? await runRubyMathtypeToMathmlBatchFile(mtAllBinFiles)
@@ -222,7 +221,6 @@ async function run() {
     for (const [id, ommlXml] of ommlPlaceholderToXml.entries()) {
       let fixed = `<span class="math-error">OMML error</span>`;
       try {
-        console.log(ommlXml)
         const mathml = await ommlToMathml(ommlXml);
         fixed = normalizeMathml(mathml);
         if (!fixed) fixed = `<span class="math-error">OMML empty</span>`;

@@ -1,8 +1,8 @@
 {
-  "name": "mammoth-convert",
+  "name": "docx-to-html-mathml",
   "version": "0.0.1",
   "author": "David Vu",
-  "description": "Patched Mammoth: enhanced DOCX → HTML with improved math/image handling",
+  "description": "Convert DOCX to HTML with MathML (OMML + MathType support)",
   "keywords": [
     "docx",
     "html",
@@ -13,10 +13,17 @@
     "convert",
     "mammoth"
   ],
-  "main": "./lib/index.js",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib/",
+    "OMML2MML.XSL",
+    "bin/"
+  ],
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidvu/mammoth-convert.git"
+    "url": "https://github.com/vuhonglinh"
   },
   "dependencies": {
     "@xmldom/xmldom": "^0.8.6",
