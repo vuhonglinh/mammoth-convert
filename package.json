@@ -1,6 +1,6 @@
 {
   "name": "docx-to-html-mathml",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "David Vu",
   "description": "Convert DOCX to HTML with MathML (OMML + MathType support)",
   "keywords": [
@@ -16,11 +16,12 @@
   "main": "index.js",
   "files": [
     "index.js",
+    "lib/index.d.ts",
     "lib/",
     "OMML2MML.XSL",
     "bin/"
   ],
-  "types": "index.d.ts",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/vuhonglinh"
