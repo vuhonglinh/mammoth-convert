@@ -1,6 +1,6 @@
 {
   "name": "docx-to-html-mathml",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "David Vu",
   "description": "Convert DOCX to HTML with MathML (OMML + MathType support)",
   "keywords": [
